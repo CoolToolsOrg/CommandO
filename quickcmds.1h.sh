@@ -20,11 +20,12 @@
 # CUSTOM COMMANDS LIST — edit this array to add your own one-click buttons.
 # Each entry: "Label|||command to run"
 # Use |||  as the separator between label and command.
+# NOTE: Avoid quotes in commands. Use simple shell commands or scripts.
 CUSTOM_COMMANDS=(
   "Flush DNS Cache|||sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder"
   "Restart Finder|||killall Finder"
   "Restart Dock|||killall Dock"
-  "Empty Trash|||osascript -e 'tell application \"Finder\" to empty trash'"
+  "Empty Trash|||rm -rf ~/.Trash/*"
 )
 
 echo "⚡"
